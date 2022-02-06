@@ -1,0 +1,127 @@
+[
+    {
+        "question": "ML Methods",
+        "answer": "When we train ML models, we use data that is either labeled or unlabeled.\n\n\n1. Supervised\n----------------\n\nIn supervised learning, the data that we use is **labeled**, that is, we have tags or labels associated with the data.\n\nThe model produces an output based on previous experience.\n\nE.g. a classifier to tell if an a text expresses a positive or negative opinion.\n\t- train the model on a dataset of positive and negative opinions.\n\t- then get predictions on new unseen opinions.\n\n2. Unsupervised\n----------------\n\nIn unsupervise dlearning, the data that we use to train the model is **unlabeled**.\n\nThe model is trained to discover inherent structure of the data: find patterns and relations, and, for example, cluster data in different groups.\n\nE.g. marketing: suggest other items to buy based on prior purchases, spending habits, etc.\n\n3. Reinforcement Learning\n----------------\n\nUsing reinforcement learning, the model can learn based on the rewards it received for its previous action.\n\nUsually involves an aganet performing actions in an environment, and receiving positive or negative feedback depending on whether it approaches the goal or not.",
+        "tag": "ML"
+    },
+    {
+        "question": "Given a dataset --> which algorithm to use?",
+        "answer": "In ML, there is no one-size-fits-all algorithm.\nThe answer depends on:\n\n- the type of the problem\n\t- is the input data ...\n\t\t- labeled data? --> supervised\n\t\t- unlabeled data? --> unsupervised\n\t\t- the solution implies optimizing and objective function by interacting with an environment? --> reinforcement learning\n\n- the kind of output we want\n\t- a number, that would be a regression problem\n\t\t- Linear, lasso, logistic, SVM, etc.\n\t- a class, that would be a classification problem\n\n- the size of the dataset\n\t- small --> algorithm with high bias and low variance (bc less likely to overfit)\n\t\t- linear regression, linear SVM\n\t- large --> Models with low bias and high variance tend to perform better as they work fine with complex relationships\n\t\t- Naive Bayes\n\n- the available resources (time, computation capacity)\n\t- Are the improvements gains in accuracy high enough to justify the costs and engineering effort needed to bring them into a production environment?\n\n- etc",
+        "tag": "ML"
+    },
+    {
+        "question": "Classification vs regression",
+        "answer": "Depends on the expected output.\n\nRegression:\n\t- If your expected output is a real or continuous value.\n\t- Example: Predicting the increase or decrease in value of apartment buildings over time.\n\nClassification:\n\t- If your expected outcome is a discrete or categorical value.\n\t- Used to predict class membership. (i.e. hotdog or not hotdog, dog or cat)\n\t- Example: Predict whether or not a user is expected to purchase something when they visit your website or online store. (Classes: likely conversion, possible conversion, unlikely conversion)",
+        "tag": "ML"
+    },
+    {
+        "question": "Linear Regression and Linear Classifier",
+        "answer": "- input: features x1,…xn of objects (matrix A) and labels (vector b)\n- goal: find the most optimal weights w1,…wn and bias for these features according to some loss function, for example, MSE or MAE for a regression problem.\n\n- MSE: mean squared error, measures the average squared difference between the estimated values and what is estimated.\n\t- is a measure of the quality of an estimator—it is always non-negative, and values closer to zero are better.\n\t- is the second moment (about the origin) of the error, and thus incorporates both the variance of the estimator (how widely spread the estimates are from one data sample to another) and its bias (how far off the average estimated value is from the truth).\n    MSE = square root (1/n  * Sum_(j=1, j=n) (y_j, y^_j)^2)\n- MAE: mean absolute error, measure of difference between two continuous variables.\n    MAE = 1/n * Sum_(j=1, j=n) |y_j, y^_j|\n\nIn the case of MSE, in practice, it’s easier to optimize it with gradient descent, that is much more computationally efficient.\n\n\nAdvantage: very useful on a huge amount of features where better algorithms suffer from overfitting",
+        "tag": "ML"
+    },
+    {
+        "question": "Gradient descent and backpropagation",
+        "answer": "Gradient descent is an iterative optimization algorithm for finding a local minimum of a differentiable function.\n\nThe idea is to take repeated steps in the opposite direction of the gradient (or approximate gradient) of the function at the current point, because this is the direction of steepest descent.\n\n\nBackpropagation, short for 'backward propagation of errors', is an algorithm for supervised learning of neural networks using gradient descent. Given an neural network and an error function, the method calculates the gradient of the error function with respect to the neural network's weights.\n\nThe gradient of the final layer of weights being calculated first and the gradient of the first layer of weights being calculated last.\n\t- Partial computations of the gradient from one layer are reused in the computation of the gradient for the previous layer.\n\t- This backwards flow of the error information allows for efficient computation of the gradient at each layer versus the naive approach of calculating the gradient of each layer separately",
+        "tag": "ML"
+    },
+    {
+        "question": "Logistic regression (Classification algorithm!)",
+        "answer": "logistic regression is a classification algorithm used to predict a binary outcome for a given set of independent variables.\n\nIt takes linear combination of features and applies non-linear function (sigmoid) to it, so it’s a very very small instance of neural network!\n\n\nThe output of logistic regression is either a 0 or 1 with a threshold value of generally 0.5. Any value above 0.5 is considered as 1, and any point below 0.5 is considered as 0.\n\nTODO",
+        "tag": "ML"
+    },
+    {
+        "question": "K-means vs KNN",
+        "answer": "The ‘K’ in K-Means Clustering has nothing to do with the ‘K’ in KNN algorithm.\n\nK-Means Clustering:\n\t- Used for clustering (K = number of clusters)\n\t- Unsupervised learning algorithm\n\t- Takes unlabeled data points and groups them into “k” number of clusters\n\t\t- The points in each cluster are similar to each other, and each cluster is different from its neighboring clusters\n\t- Uses elbow method to calculate “k” and recalculates cluster centroids until it reaches a global optima\n\t- Algorithm: You need to select random k points from your data and name them centers of clusters. The clusters of other objects are defined by the closest cluster center. Then, centers of the clusters are converted and the process repeats until convergence.\n\nK-Nearest Neighbor (KNN):\n\t- Used for classification (K = number of neighbors)\n\t- Supervised learning algorithm’\n\t- Takes labeled data points and uses them to learn how to label other points\n\t- To label a new point, it looks at the “nearest neighbor” (labeled points closest to new point)\n\t- Neighbors vote on how to label a new point\nTODO",
+        "tag": "ML"
+    },
+    {
+        "question": "Training, validation and test sets",
+        "answer": "The convention is 80/20 or 70/30 for training/testing splits.\n\nThe training set can be further split into training/validation.",
+        "tag": "ML"
+    },
+    {
+        "question": "Curse of dimensionality",
+        "answer": "When our data has too many features (columns) compared to the number of observations (rows) we risk overfitting our model resulting in false and unreliable predictions.\n\nIt becomes harder to make meaningful clusters with the observations because too many dimensions cause every observation to look equidistant from other data points.",
+        "tag": "ML"
+    },
+    {
+        "question": "Reducing dimensionality",
+        "answer": "Feature Engineering / Selection:\n\t- get rid of some features!\n\t\t- We can use heatmaps, visualizations, or even domain knowledge to find which features are contributing to the accuracy of the model and which features are not.\n\t- combine different features or create entirely new features based on some insight about the data\n\t\t- to reduce the number of features but preserve their impact on model accuracy.\n\nPrincipal Component Analysis (PCA):\n\t- Used on continuous data, this method projects data along the axis of increasing variance. The features with the highest variance are the ‘principal’ components.\n\t\t- We can use PCA to determine which features have the largest impact on the outcome/prediction of the model.\n\nAuto-encoders:\n\t- An unsupervised neural network that compresses data down to a lower dimension and then reconstructing the data based on the most important features. This gets rid of noise and redundancy in the data.\n\t\t- Auto-encoders can also be linear or non-linear based on the activation function.",
+        "tag": "ML"
+    },
+    {
+        "question": "Overfitting reduction",
+        "answer": "Overfitting is a situation that occurs when a model learns the training set too well, taking up random fluctuations in the training data as concepts. These impact the model’s ability to generalize and don’t apply to new data\n\n- Cross-validation:\n\t- This could be as simple as using a train, test, validation split on your data or even something more complex like K-folds (where the data is split into K number of sections or folds where each fold is used as a testing set).\n\n- Early Stopping:\n\t- During each training epoch the model is given more opportunities to fit the data but after a while this begins to overfit the training set. We can monitor the training performance (for an increase in loss) and stop training as the performance on the validation dataset decreases (compared to the performance on the validation dataset at the prior training epoch).\n\n- Regularization:\n\t- It involves a cost term for the features involved with the objective function.\n\t- This method stops the model from getting over complicated allowing it to generalize better.\n\n\t- Ridge Regression: performs L2 regularization, i.e. adds penalty equivalent to square of the magnitude of coefficients\n\t- Lasso Regression: performs L1 regularization, i.e. adds penalty equivalent to absolute value of the magnitude of coefficients\n\n\n- Making a simpler model:\n\t- reduce variance by using les variables and parameters\n\n- Weight Constraints:\n\t- Checks the weights of a network and if their size exceeds a certain limit, the weights are rescaled to be back below the limit (or in the range)\n\t- prevents single features from dominating the model.\n\n- Dropout:\n\t- Essentially “drops out” individual neurons in a neural network during the training process. Leading to significantly lower generalization error rates.",
+        "tag": "ML"
+    },
+    {
+        "question": "bias / variance trade-off",
+        "answer": "The bias-variance trade-off aims to choose a model optimized for accurately capturing regularities in its training data, but also generalizing well on unseen data.\n\nWe want the algorithm to generalize, but not oversimplify.\n\nBias:\n\t- occurs when the predicted values are further from the actual values.\n\t- can cause the model to miss relevant or important relationships between features and its target output.\n\t- Algorithms with high bias error tend to be underfit.\n\nVariance:\n\t- mesures how sensitive a machine learning model is to small changes in the training data.\n\t- Models with high variance tend to focus on the random noise in training data rather than important relationships between features resulting in overfitting\n\n\nhigh bias, low variance --> consistent but inaccurate\nlow bias, high variance --> inconsistent but accurate",
+        "tag": "ML"
+    },
+    {
+        "question": "Confusion Matrix",
+        "answer": "Is a table used to represent the performance of a classification model.\n\nOne axis refers to the predicted class and the other the the actual class.\n\nIt contains the true positives, false positives, true negatives, and false negatives.\n\nHelpful for calculating precision, recall, F1, and AUC-ROC.",
+        "tag": "ML"
+    },
+    {
+        "question": "precission vs recall",
+        "answer": "Metrics to evaluate classification methods.\n\nPrecission:\n\t- What proportion of positive predictions are actually correct?\n\t- e.g. spam filter:\n\t\t-  It’s not a big deal if we accidentally classify an advertisement (spam) as a genuine email.\n\t\t- It IS a big deal if a new job offer from your dream company is classified as spam.\n\t\t\t--> maximize precission\n\n\tPrecision = TP / (TP + FP)\n\nRecall:\n\t- What proportion of actual positives are correctly predicted?\n\t- e.g. cancer prediction\n\t\t- We REALLY don’t want people with cancer being given a false negative because it’s possible they will go even longer without treatment.\n\t\t- But there’s not nearly as much downside when telling a healthy person that they have cancer.\n\n\tRecall = sensitivity = TP / (TP + FN)",
+        "tag": "ML"
+    },
+    {
+        "question": "F1 score",
+        "answer": "Is the harmonic mean of precission and recall.\n\nUsed as a best practice when there is not a specific reason to highly value either precision or recall\n\nTypically calculated in a confusion matrix:\n\n\tF1 = 2 * (prec * recall) / (prec + recall)\n\t\t= TP / (TP + 1/2(FP + FN))",
+        "tag": "ML"
+    },
+    {
+        "question": "imbalanced dataset",
+        "answer": "Choose an appropriate evaluation metric:\n\t- In many cases as a machine learning engineer you’ll have to deal with imbalanced data\n\t\t- e.g. anomaly detection (credit card fraud, cancer detection...)\n\t- You could classify every instance as non-anomalous and you would get an accuracy of 99% but that wouldn’t be good enough\n\t- use confusion matrix to calculate precision, recall, F1 to get a better insight on how our model performs.\n\nAlgorithm:\n\t- Experiment with different algorithms, as different algorithms performs better on different types of problems\n\t\t- e.g. use a random forest instead of decision tree\n\nResampling: oversampling or undersampling\n\t- Undersampling: When there is a sufficient amount of data\n\t\t- balance the dataset by reducing the size of the abundant class. By keeping all samples in the rare class and randomly selecting an equal number of samples in the abundant class, a balanced new dataset can be retrieved for further modelling.\n\t- Oversampling: When there is an insufficient amount of data\n\t\t- balance dataset by increasing the size of rare samples. Rather than getting rid of abundant samples, new rare samples are generated.",
+        "tag": "ML"
+    },
+    {
+        "question": "L1 vs L2 regularization",
+        "answer": "regression model that uses L1 regularization is called Lasso Regression.\n\t- is used to shrink the coefficient of less important features and removing some features entirely (helping with feature selection)\n\nA model that uses L2 is called Ridge Regression.\n\t- adds “squared magnitude” of coefficient as penalty term to the loss function\n\nTODO",
+        "tag": "ML"
+    },
+    {
+        "question": "ROC curve",
+        "answer": "Is a graph that shows the performance of a multi-class classification model at every classification threshold.\n\nAUC-ROC (area under ROC curve) tells how much model is capable of distinguishing between classes.\n\t- A higher AUC means the model will be better at is at predicting an observation as its own class. (i.e. 0 as 0 and 1 as 1)",
+        "tag": "ML"
+    },
+    {
+        "question": "How Do You Handle Missing or Corrupted Data in a Dataset",
+        "answer": "Drop those rows or columns or replace them entirely with some other value:\n\nPandas:\n\t- IsNull() and dropna() will help to find the columns/rows with missing data and drop them\n\t- Fillna() will replace the wrong values with a placeholder value",
+        "tag": "ML"
+    },
+    {
+        "question": "Advantages and disadvantages of decission trees",
+        "answer": "Advantages:\n\t- Easily understandable and explainable to stakeholders\n\t- Doesn’t require the data to be normalized or scaled\n\t- No need to impute missing data because null values don’t affect process\n\t- Requires less data preprocessing than other algorithms (Good baseline)\n\nDisadvantages:\n\t- Leads to overfitting of the data causing incorrect predictions\n\t- Sensitive to Noise — Does not work well if you have too many un-correlated variables\n\t- High variance — small changes early in the tree can have a large impact on the outcome",
+        "tag": "ML"
+    },
+    {
+        "question": "ML vs DL",
+        "answer": "Deep learning is a subset of machine learning that involves systems that think and learn like humans using artificial neural networks. The term ‘deep’ comes from the fact that you can have several layers of neural networks.\n\nML:\n\t- Enables machines to take decisions on their own, based on past data\n\t- It needs only a small amount of data for training\n\t- Works well on the low-end system, so you don't need large machines\n\t- Most features need to be identified in advance and manually coded\n\nDL:\n\t- Enables machines to take decisions with the help of artificial neural networks\n\t- It needs a large amount of training data\n\t- Needs high-end machines because it requires a lot of computing power\n\t- The machine learns the features from the data it is provided",
+        "tag": "ML"
+    },
+    {
+        "question": "Naive Bayes Classifier?",
+        "answer": "The classifier is called ‘naive’ because it makes assumptions that may or may not turn out to be correct.\n\nThe algorithm assumes that the presence of one feature of a class is not related to the presence of any other feature (absolute independence of features), given the class variable.\n\nFor instance, a fruit may be considered to be a cherry if it is red in color and round in shape, regardless of other features. This assumption may or may not be right (as an apple also matches the description).",
+        "tag": "ML"
+    },
+    {
+        "question": "Decision Trees",
+        "answer": "In every node we choose the best split among all features and all possible split points. Each split is selected in such a way as to maximize some functional.\n\t- In classification trees we use cross entropy and Gini index.\n\t- In regression trees we minimize the sum of a squared error between the predictive variable of the target values of the points that fall in that region and the one we assign to it.\n\nWe make this procedure recursively for each node and finish when we meet a stopping criteria. They can vary from minimum number of leafs in a node to tree height.\n\n\nPruning is a technique in machine learning that reduces the size of decision trees. It reduces the complexity of the final classifier, and hence improves predictive accuracy by the reduction of overfitting.\n\nPruning can occur in:\n\t- Top-down fashion. It will traverse nodes and trim subtrees starting at the root\n\t- Bottom-up fashion. It will begin at the leaf nodes",
+        "tag": "ML"
+    },
+    {
+        "question": "Random Forest",
+        "answer": "A ‘random forest’ is a supervised machine learning algorithm that is generally used for classification problems. It operates by constructing multiple decision trees during the training phase. The random forest chooses the decision of the majority of the trees as the final decision.",
+        "tag": "ML"
+    },
+    {
+        "question": "Statistical significance",
+        "answer": "Statistical significance is a determination that the results in the data are not explainable by chance alone.\n\nStatistical hypothesis testing is used to provide a p-value, which is the probability of observing results as extreme as those in the data, assuming the results are truly due to chance alone. A p-value of 5% or lower is often considered to be statistically significant.",
+        "tag": "ML"
+    }
+]

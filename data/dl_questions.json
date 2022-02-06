@@ -1,0 +1,31 @@
+[
+    {
+        "question": "Inductive bias",
+        "answer": "The kind of necessary assumptions about the nature of the target function (of a learning algorithm).\n\nChomsky: sequential recency is not the right bias for learning human language.\n\n\t--> RNN: prefer sequential recency (gradients become attenuated over time) --> not the best LMs",
+        "tag": "DL"
+    },
+
+    {
+        "question": "RNN LMs",
+        "answer": "Allowed to model language without making the Markov assumption, that is, allowed to condition the next word on the entire sentence history.\n\nChomsky: sequential recency is not the right bias for learning human language.\n\n\t--> RNN: prefer sequential recency (gradients become attenuated over time) --> not the best LMs",
+        "tag": "DL"
+    },
+
+    {
+        "question": "BERT",
+        "answer": "BERT → pretrain deep bidirectional networks by jointly conditioning on both left and right context\n\nnew pre-training objective: the masked language model (randomly masks some of the input tokens, and the objective is to predict the original vocabulary id of the masked word based only on its context)",
+        "tag": "DL"
+    },
+
+    {
+        "question": "Hewitt and Manning structural probing",
+        "answer": "Evaluate how well syntax trees are embedded in a linear transformation of the network representation space, such that the transformed space embeds parse trees across all sentences.\n\nIt performs two different evaluations:\n\t- Tree Distance eval, in which squared L2 distances encode the distance between words in the parse tree.\n\t- Tree Depth eval, in which squared L2 norm encodes depth in the parse tree.",
+        "tag": "DL"
+    },
+
+    {
+        "question": "self-attention",
+        "answer": "Mechanism/architecture that allows the model to look at other positions in the input for clues  that can help lead to a better encoding of each word.",
+        "tag": "DL"
+    }
+]

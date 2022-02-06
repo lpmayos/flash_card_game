@@ -1,0 +1,17 @@
+[
+    {
+        "question": "Name the 4 steps of coding",
+        "answer": "1) Verify the constraintsn\t- are there any duplicates?n\t- negative numbersn\t- empty sequencesn\t- repeated numbersn\t- case sensitivitynn2) Write some test casesn\t- and expected resultsnn3) Brute force solutionn\t- time & space complexitiesnn4) Optimization",
+        "tag": "coding"
+    },
+    {
+        "question": "Think aloud while coding. For example...",
+        "answer": "- one solution I have in mind is...\n- another idea I have in mind is...\n- do you think I should start coding with this idea?\n- if the problem was ... instead of ... it would be much easier",
+        "tag": "coding"
+    },
+    {
+        "question": "What are the costs of Big O analysis?",
+        "answer": "\nRuntime growth relative to input:\n\n\t- O(1)          constant\n\t- O(log n)      logarithmic\n\t- O(n)          linear\n\t- O(n log n)    log linear\n\t- O(n^2)        quadratic\n\t- O(2^n)        exponential\n\t- O(n^3)        cubic",
+        "tag": "coding"
+    }
+]
